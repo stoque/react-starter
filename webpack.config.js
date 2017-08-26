@@ -34,12 +34,43 @@ module.exports = {
         include: /src/,
         loader: 'standard-loader'
       },
+
       {
         test: /\.js$/,
         exclude: /node_modules/,
         include: /src/,
         loader: 'babel-loader'
+      },
+
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              localIdentName: '[name]__[local]___[hash:base64:5]'
+            }
+          }
+        ]
+      },
+
+      {
+        test: /\.styl$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              localIdentName: '[name]__[local]___[hash:base64:5]'
+            }
+          },
+          'stylus-loader'
+        ]
       }
+
     ],
   }
 }

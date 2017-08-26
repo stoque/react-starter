@@ -2,8 +2,11 @@
 
 import React from 'react'
 
+import styles from './app-content.styl'
+
 const AppContent = () => (
-  <div>App</div>
+  <div className={styles.app}>
+  </div>
 )
 
 export default AppContent
